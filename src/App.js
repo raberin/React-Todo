@@ -21,27 +21,35 @@ class App extends React.Component {
           id: 1528817084358,
           completed: false
         }
-      ],
-      todo : ""
+      ], 
+      todo: ""
     };
   }
 
   formSubmitHandler = event => {
     event.preventDefault();
     let newTodo = {
-      task: "",
+      task: this.state.todo,
       id: Date.now(),
       completed: false
     }
 
-    this.setState({todos : [...this.state.todos, newTodo], todo: ""})
+    this.setState({todos : [...this.state.todos, newTodo], todo:""})
+
+    event.target.reset();
   }
+
+  inputChangeHandler = event => {
+    this.setState({ todo: event.target.value })
+  };
+
+  resetForm
 
   render() {
     return (
       <div>
-        <TodoForm />
-        <TodoList propsTodoList={this.state.todos}/>
+        <TodoForm propsTaskField={this.inputChangeHandler} submitHandler={this.formSubmitHandler} />
+        <TodoList  propsTodoList={this.state.todos}/>
       </div>
       
     );

@@ -2,10 +2,10 @@ import React from 'react';
 
 const TodoForm = (props) => {
     return (
-        <form className="TodoForm">
-        <input type="text" name="InputField" />
-        <input type="submit" name="AddTodo" value="Add Todo" />
-        <input  type="submit" name="ClearCompleted" value="Clear Completed" />
+        <form className="TodoForm" onSubmit={props.submitHandler}>
+        <input type="text" name="InputField" onChange={props.propsTaskField} />
+        <button type="submit"> Add Todo </button>
+        <button  type="submit" name="ClearCompleted">Clear Completed</button>
         </form>
     )
 }
