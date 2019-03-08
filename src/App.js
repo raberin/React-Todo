@@ -35,9 +35,7 @@ class App extends React.Component {
       id: Date.now(),
       completed: false
     };
-
     this.setState({ todos: [...this.state.todos, newTodo], todo: "" });
-
     event.target.reset();
   };
 
@@ -45,6 +43,23 @@ class App extends React.Component {
     this.setState({ todo: event.target.value });
   };
 
+  toggleItem = todoId => {
+    this.setState(prevState => {
+      return {
+        todos: prevState.todos.map(todo => {
+          if(todo.id === todoId) {
+            return {
+              name: todo.task,
+              id: todo.id,
+              completed: !todo.completed
+            };
+          } else {
+            return todo;
+          }
+        })
+      };
+    });
+  };
 
   render() {
     return (
