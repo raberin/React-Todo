@@ -1,10 +1,11 @@
 import React from 'react';
 
 const Todo = (props) => {
+    // let completed = props.todo.completed ? " completed" : "";
     return (
-        <ul>
-            <li>{props.propsTodo.task}</li>
-        </ul>
+        <div className='d'>
+            <p>{props.propsTodo.task}</p>
+        </div>
     )
 }
 

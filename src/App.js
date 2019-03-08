@@ -1,7 +1,20 @@
-import React from 'react';
+import React from "react";
 
-import TodoForm from './components/TodoComponents/TodoForm';
-import TodoList from './components/TodoComponents/TodoList';
+import TodoForm from "./components/TodoComponents/TodoForm";
+import TodoList from "./components/TodoComponents/TodoList";
+
+const todos = [
+  {
+    task: "Organize Garage",
+    id: 1528817077286,
+    completed: false
+  },
+  {
+    task: "Bake Cookies",
+    id: 1528817084358,
+    completed: false
+  }
+];
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -10,18 +23,7 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      todos : [
-        {
-          task: 'Organize Garage',
-          id: 1528817077286,
-          completed: false
-        },
-        {
-          task: 'Bake Cookies',
-          id: 1528817084358,
-          completed: false
-        }
-      ], 
+      todos: todos,
       todo: ""
     };
   }
@@ -32,26 +34,28 @@ class App extends React.Component {
       task: this.state.todo,
       id: Date.now(),
       completed: false
-    }
+    };
 
-    this.setState({todos : [...this.state.todos, newTodo], todo:""})
+    this.setState({ todos: [...this.state.todos, newTodo], todo: "" });
 
     event.target.reset();
-  }
-
-  inputChangeHandler = event => {
-    this.setState({ todo: event.target.value })
   };
 
-  resetForm
+  inputChangeHandler = event => {
+    this.setState({ todo: event.target.value });
+  };
+
 
   render() {
     return (
       <div>
-        <TodoForm propsTaskField={this.inputChangeHandler} submitHandler={this.formSubmitHandler} />
-        <TodoList  propsTodoList={this.state.todos}/>
+        <h1>Todo List Day 1 MVP</h1>
+        <TodoForm
+          propsTaskField={this.inputChangeHandler}
+          submitHandler={this.formSubmitHandler}
+        />
+        <TodoList propsTodoList={this.state.todos} />
       </div>
-      
     );
   }
 }
