@@ -49,7 +49,7 @@ class App extends React.Component {
         todos: prevState.todos.map(todo => {
           if(todo.id === todoId) {
             return {
-              name: todo.task,
+              task: todo.task,
               id: todo.id,
               completed: !todo.completed
             };
@@ -61,6 +61,8 @@ class App extends React.Component {
     });
   };
 
+  
+
   render() {
     return (
       <div>
@@ -69,7 +71,8 @@ class App extends React.Component {
           propsTaskField={this.inputChangeHandler}
           submitHandler={this.formSubmitHandler}
         />
-        <TodoList propsTodoList={this.state.todos} 
+        <TodoList 
+          todoList={this.state.todos} 
           toggleTodo={this.toggleTodo} 
         />
       </div>
