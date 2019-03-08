@@ -1,7 +1,7 @@
 import React from "react";
 
 const Todo = props => {
-  // let completed = props.todo.completed ? " completed" : "";
+  let completed = props.todo.completed ? "completed" : "";
   return (
     <div
       key={props.todo.id}

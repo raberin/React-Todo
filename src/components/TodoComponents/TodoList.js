@@ -8,11 +8,13 @@ const TodoList = props => {
   return (
     <div className="todoList">
       {props.todoList.map(singleTodo => (
-           <Todo todo={singleTodo} toggleTodo={props.toggleTodo} />
+        <Todo
+          todo={singleTodo}
+          toggleTodo={props.toggleTodo}
+        />
       ))}
     </div>
   );
 };
-
 
 export default TodoList;
