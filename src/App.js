@@ -43,7 +43,7 @@ class App extends React.Component {
     this.setState({ todo: event.target.value });
   };
 
-  toggleItem = todoId => {
+  toggleTodo = todoId => {
     this.setState(prevState => {
       return {
         todos: prevState.todos.map(todo => {
@@ -69,7 +69,9 @@ class App extends React.Component {
           propsTaskField={this.inputChangeHandler}
           submitHandler={this.formSubmitHandler}
         />
-        <TodoList propsTodoList={this.state.todos} />
+        <TodoList propsTodoList={this.state.todos} 
+          toggleTodo={this.toggleTodo} 
+        />
       </div>
     );
   }
