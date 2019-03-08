@@ -1,4 +1,6 @@
 import React from "react";
+import "./App.css"
+import "./components/TodoComponents/Todo.css"
 
 import TodoForm from "./components/TodoComponents/TodoForm";
 import TodoList from "./components/TodoComponents/TodoList";
@@ -76,7 +78,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <h1>Todo List Day 1 MVP</h1>
+        <h1>Todo List Day 2 MVP</h1>
         <TodoForm
           propsTaskField={this.inputChangeHandler}
           submitHandler={this.formSubmitHandler}
