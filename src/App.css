@@ -66,7 +66,7 @@ html {
 }
 
 h1 {
-  font-size: 2rem;
+  font-size: 3.6rem;
   font-weight: bold;
   margin-right: 1%;
 }
@@ -74,4 +74,17 @@ h1 {
 h2 {
   font-size: 2rem;
   font-weight: bold;
+}
+
+.container {
+	max-width: 1080px;
+	height: 100%;
+	width: 100%;
+	background: #7B2540;
+	color: white;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-content: center;
+	align-items: center;
 }

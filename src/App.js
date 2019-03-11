@@ -77,7 +77,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <h1>Todo List Day 2 MVP</h1>
         <TodoForm
           propsTaskField={this.inputChangeHandler}

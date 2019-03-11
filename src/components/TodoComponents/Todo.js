@@ -5,7 +5,7 @@ const Todo = props => {
   let completed = props.todo.completed ? "completed" : "";
   return (
     <div
-      className={`todo-${completed}`}
+      className={`todo-${completed}` } todoItem
       key={props.todo.id}
       onClick={event => {
         props.toggleTodo(props.todo.id);
